@@ -1,4 +1,4 @@
-# Python Series Repository
+# Python Series 
 
 Welcome to the Python Series repository! This project aims to provide a collection of Python scripts, tutorials, and examples to help you learn and master Python programming.
 
@@ -6,6 +6,6 @@ Welcome to the Python Series repository! This project aims to provide a collecti
 
 | Day  | Topic Covered                      | Summary                                                                 |
 |------|-----------------------------------|-------------------------------------------------------------------------|
-| Day 1 | Python Basics                      | Introduced to Python syntax, basic data types (integers, strings, lists), and simple I/O operations. |
+| Day 1 | Python Basics                      | Inner Working, Datatypes, Is keyword, Memory reference |
 
 
