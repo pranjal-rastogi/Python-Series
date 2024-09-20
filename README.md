@@ -4,8 +4,8 @@ Welcome to the Python Series repository! This project aims to provide a collecti
 
 ## Progress Tracker
 
-| Day  | Topic Covered                      | Summary                                                                 |
-|------|-----------------------------------|-------------------------------------------------------------------------|
-| Day 1 | Python Basics                      | Inner Working, Datatypes, Is keyword, Memory reference |
-
+| Day  |           Summary                                                              |
+|------|-----------------------------------------------------------------------|
+| Day 1 | Inner Working, Datatypes, Is keyword, Memory reference |
+| Day 2 |Numbers, String, Tuple, List, Dictionaries |
 
