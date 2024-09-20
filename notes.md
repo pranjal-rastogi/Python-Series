@@ -53,3 +53,53 @@ print(b)       # Output: [1, 2, 3, 4], 'b' reflects the change
 - None : None
 - Functions, modules, classes
 - Advance: Decoraters, Generators, Iterators, MetaProgramming 
+
+## 7. Difference between repr(), str() and print()
+1. repr() : Provides a string that is unambiguous and ideally suitable for debugging. It aims to give you a string that would recreate the object if passed back into Python.
+Output: Usually, the result of repr() is more technical and often includes quotes around strings.
+
+2. str() : Provides a readable and more human-friendly string representation of the object. It’s what you see when printing things for user-facing content.
+Output: Less technical, focuses on clarity.
+
+3. print() : Simply prints the result of str() to the console. It is used for displaying output to the user.
+Output: Does not return anything; it just shows the string on the console.
+
+```python
+
+x = "Hello, World!"
+
+# repr() example
+print(repr(x))  # Output: "'Hello, World!'"
+
+# str() example
+print(str(x))  # Output: "Hello, World!"
+
+# print() example (similar to str())
+print(x)  # Output: Hello, World!
+
+```
+- repr(x) gives "'Hello, World!'", which includes quotes because it’s meant to represent the object precisely.
+- str(x) just shows "Hello, World!" without extra details.
+- print(x) behaves like str() and prints the result directly to the console.
+
+In summary, repr() is for developers (debugging), str() is for users (readable output), and print() simply displays the result of str().
+
+## 8. what is slicing dicing in python
+- Slicing: Extracting a portion (or slice) of a sequence like a list, string, or tuple using a specific range of indices.
+- Dicing: This term is often used to mean slicing with multiple dimensions (e.g., in a 2D array or matrix), but it’s not a formal Python term. Think of it as slicing in more complex data structures.
+
+``` python
+sequence[start:stop:step]
+```
+
+```python
+# Slicing a list
+my_list = [1, 2, 3, 4, 5, 6]
+
+# Slice from index 1 to 4
+print(my_list[1:4])  # Output: [2, 3, 4]
+
+# Slice with step of 2
+print(my_list[0:6:2])  # Output: [1, 3, 5]
+
+```
