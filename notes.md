@@ -103,3 +103,166 @@ print(my_list[1:4])  # Output: [2, 3, 4]
 print(my_list[0:6:2])  # Output: [1, 3, 5]
 
 ```
+
+## what is lamda function in python
+A **lambda function** in Python is a small, anonymous function that can have any number of arguments but only one expression. It's often used when you need a simple function for a short period of time.
+
+Here's an example:
+
+```python
+# Regular function
+def add(x, y):
+    return x + y
+
+# Lambda function
+add = lambda x, y: x + y
+```
+
+Both do the same thing, but the lambda function is written in a more compact way. It's mainly used for quick, throwaway functions inside other functions like `map()`, `filter()`, or `sorted()`.
+
+## Explain *args and **kwargs in python
+In Python:
+
+- `*args` allows you to pass a variable number of **positional arguments** to a function. It collects the extra arguments as a tuple.
+
+  Example:
+  ```python
+  def my_func(*args):
+      for arg in args:
+          print(arg)
+
+  my_func(1, 2, 3)  # Output: 1 2 3
+  ```
+
+- `**kwargs` allows you to pass a variable number of **keyword arguments** (name=value pairs). It collects them as a dictionary.
+
+  Example:
+  ```python
+  def my_func(**kwargs):
+      for key, value in kwargs.items():
+          print(f"{key} = {value}")
+
+  my_func(a=1, b=2)  # Output: a = 1, b = 2
+  ```
+
+In short, `*args` is for passing many positional arguments, and `**kwargs` is for passing many keyword arguments.
+
+## What is yield in python 
+In Python, `yield` is used in a function to turn it into a **generator**. Instead of returning a value and ending the function, `yield` pauses the function, saves its state, and returns a value. The next time the generator is called, it resumes from where it left off.
+
+This is useful when you want to produce a series of values lazily, without storing them all in memory at once.
+
+Example:
+
+```python
+def count_up_to(n):
+    for i in range(1, n+1):
+        yield i
+
+counter = count_up_to(3)
+print(next(counter))  # Output: 1
+print(next(counter))  # Output: 2
+```
+
+The function `count_up_to` generates numbers one by one using `yield`.
+
+## self and __init__ use in python
+
+- `**self**` refers to the instance of the class. It allows you to access the attributes and methods of the class in the current object. It's used in instance methods to refer to the object being created or modified.
+
+  Example:
+  ```python
+  class Car:
+      def drive(self):
+          print("Car is driving")
+  ```
+
+- `**__init__()**` is the **constructor method** that gets called automatically when an object is created. It's used to initialize the object's attributes.
+
+  Example:
+  ```python
+  class Car:
+      def __init__(self, color):
+          self.color = color  # Set color attribute when object is created
+  ```
+
+In short, `self` refers to the object, and `__init__()` initializes the object’s attributes when it’s created.
+
+## Behind the scene of loops in python
+In Python, behind the scenes, loops like `for` and `while` work by **iterating over items** one by one.
+
+- **For Loop:** When you use a `for` loop, Python looks for an object that can be **iterated** (like a list, tuple, or string). It fetches each item using an internal method called `__iter__()` and processes it one by one.
+  
+  Example:
+  ```python
+  for i in [1, 2, 3]:
+      print(i)
+  ```
+
+- **While Loop:** In a `while` loop, Python keeps executing the code **as long as the condition is true**. It checks the condition before each iteration.
+
+  Example:
+  ```python
+  i = 0
+  while i < 3:
+      print(i)
+      i += 1
+  ```
+
+In simple terms, `for` loops iterate over items, and `while` loops repeat based on a condition, both ensuring that code runs multiple times efficiently.
+
+## why we use iter() and next() in for loop 
+In Python, `iter()` and `next()` are used to manually handle iteration, providing more control over the loop process. Here's why:
+
+1. **`iter()`**: The `iter()` function converts an iterable (like a list or tuple) into an **iterator**. An iterator is an object that remembers its position during iteration.
+
+   Example:
+   ```python
+   my_list = [1, 2, 3]
+   iterator = iter(my_list)
+   ```
+
+2. **`next()`**: The `next()` function **fetches the next item** from an iterator. Each time you call `next()`, it moves to the next element until there are no more items left, at which point it raises a `StopIteration` exception.
+
+   Example:
+   ```python
+   print(next(iterator))  # Output: 1
+   print(next(iterator))  # Output: 2
+   ```
+
+**In a `for` loop**, Python **automatically** uses `iter()` and `next()` behind the scenes to go through each item in the iterable. You don't usually see these functions, but they allow Python to loop over items efficiently.
+
+In short, `iter()` initializes the iterator, and `next()` fetches items from it. The `for` loop handles this for you automatically.
+
+## What is scope and closuer in python
+In Python:
+
+- **Scope** refers to the region where a variable can be accessed. Python has four types of scope:
+  1. **Local**: Variables defined inside a function.
+  2. **Enclosing**: Variables in the outer function when dealing with nested functions.
+  3. **Global**: Variables defined at the top level of the script or module.
+  4. **Built-in**: Predefined names like `print()`, `len()`, etc.
+
+  Example:
+  ```python
+  x = 10  # Global scope
+
+  def func():
+      y = 5  # Local scope
+  ```
+
+- **Closure** occurs when a **nested function remembers** the variables from its enclosing function, even after the outer function has finished executing. This allows the inner function to access and use the variables from its outer function's scope.
+
+  Example:
+  ```python
+  def outer():
+      x = 10
+      def inner():
+          print(x)  # Closure: inner remembers x from outer
+      return inner
+
+  my_func = outer()
+  my_func()  # Output: 10
+  ```
+
+In short, **scope** defines where a variable is accessible, and **closure** allows a nested function to "remember" variables from its parent function even after the parent has finished.
