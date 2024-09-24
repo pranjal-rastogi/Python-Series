@@ -234,7 +234,7 @@ In Python, `iter()` and `next()` are used to manually handle iteration, providin
 
 In short, `iter()` initializes the iterator, and `next()` fetches items from it. The `for` loop handles this for you automatically.
 
-## What is scope and closuer in python
+## What is scope and closure in python
 In Python:
 
 - **Scope** refers to the region where a variable can be accessed. Python has four types of scope:
@@ -266,3 +266,10 @@ In Python:
   ```
 
 In short, **scope** defines where a variable is accessible, and **closure** allows a nested function to "remember" variables from its parent function even after the parent has finished.
+
+## What is static method
+A static method is a method that can be called directly from a class without creating an instance of that class. Static methods are useful for performing general operations that don't depend on a specific object's state or behavior.
+
+## What is use isinstance() function
+The isinstance() function returns True if the specified object is of the specified type, otherwise False. 
+
